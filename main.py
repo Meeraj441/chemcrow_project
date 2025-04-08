@@ -1,13 +1,17 @@
+import os
+from dotenv import load_dotenv
 from chemcrow import ChemCrow
 from langchain.chat_models import AzureChatOpenAI
 
 def main():
+    load_dotenv()  # Load environment variables from .env
+
     llm = AzureChatOpenAI(
         openai_api_type="azure",
-        openai_api_key="<your-azure-api-key>",
-        openai_api_base="https://<your-resource-name>.openai.azure.com/",
-        openai_api_version="2023-05-15",
-        deployment_name="gpt-4o",
+        openai_api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+        openai_api_base=os.getenv("AZURE_OPENAI_API_BASE"),
+        openai_api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2023-05-15"),
+        deployment_name=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
         temperature=0.7
     )
 

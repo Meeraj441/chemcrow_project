@@ -1,28 +1,32 @@
-# 🧪 ChemCrow Project (Local Setup on Windows)
+# 🧪 ChemCrow Project (Azure OpenAI)
 
 This project sets up [ChemCrow](https://github.com/ur-whitelab/chemcrow) on your local Windows machine, allowing you to use powerful chemical reasoning with AI.
+
+This version integrates ChemCrow with **Azure OpenAI** using `.env` for secure key management.
 
 ## 📁 Project Structure
 
 ```
-chemcrow_project/
-│
-├── main.py            # Python file to run ChemCrow with a prompt
-├── .gitignore         # Prevents uploading your environment and secrets
-├── requirements.txt   # All necessary Python packages
-└── README.md          # This file
+chemcrow_project_azure_env/
+├── main.py            # Main script to run ChemCrow
+├── .env               # Store your Azure API keys (excluded from Git)
+├── .gitignore         # Excludes .env and environment folders
+├── requirements.txt   # Dependencies
+└── README.md          # Setup guide
 ```
 
-## 🚀 How to Run This Project
+---
+
+## 🚀 Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chemcrow_project.git
+git clone https://github.com/<yourusername>/chemcrow_project.git
 cd chemcrow_project
 ```
 
-### 2. Create a Virtual Environment (Windows)
+### 2. Create & Activate Virtual Environment (Windows)
 
 ```bash
 python -m venv chemcrow_env
@@ -35,22 +39,24 @@ chemcrow_env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Set Up API Keys
+### 4. Update `.env` File
 
-Create a `.env` file in the root directory with this format:
+Open `.env` and add your Azure details:
 
 ```
-OPENAI_API_KEY=your_openai_key_here
-SERPAPI_API_KEY=your_serpapi_key_here
+AZURE_OPENAI_API_KEY=your-azure-api-key
+AZURE_OPENAI_API_BASE=https://your-resource-name.openai.azure.com/
+AZURE_OPENAI_API_VERSION=2023-05-15
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
 ```
 
-### 5. Run the App 🎉
+### 5. Run the Project
 
 ```bash
 python main.py
 ```
 
-You should see ChemCrow respond to the prompt inside `main.py`.
+---
 
 ## 🧪 Sample Prompts You Can Try
 
@@ -95,3 +101,7 @@ Other example prompts:
 - [ChemCrow on GitHub](https://github.com/ur-whitelab/chemcrow)
 - [LangChain](https://github.com/langchain-ai/langchain)
 - [RDKit](https://www.rdkit.org/)
+
+---
+
+⚠️ **Never share your `.env` file or commit it to GitHub.** It's already excluded via `.gitignore`.
