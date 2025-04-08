@@ -8,7 +8,6 @@ This project sets up [ChemCrow](https://github.com/ur-whitelab/chemcrow) on your
 chemcrow_project/
 │
 ├── main.py            # Python file to run ChemCrow with a prompt
-├── .env               # API keys (keep this secret!)
 ├── .gitignore         # Prevents uploading your environment and secrets
 ├── requirements.txt   # All necessary Python packages
 └── README.md          # This file
