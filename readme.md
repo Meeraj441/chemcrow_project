@@ -4,6 +4,8 @@ This project sets up [ChemCrow](https://github.com/ur-whitelab/chemcrow) on your
 
 This version integrates ChemCrow with **Azure OpenAI** using `.env` for secure key management.
 
+The prompt output will be saved in outputs folder with prompt and timestamp as markdown file name.
+
 ## 📁 Project Structure
 
 ```
