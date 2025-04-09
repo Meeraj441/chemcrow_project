@@ -3,6 +3,7 @@ openai
 serpapi
 rdkit-pypi
 python-dotenv
+paperscraper
 numpy<2.0
 pydantic==1.10.13
 langchain==0.0.275
